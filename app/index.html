@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
+        <!-- In-line style for Loading Spinner -->
+        <style type="text/css">
+            @-webkit-keyframes spinner { from {-webkit-transform: rotate(0deg);} to {-webkit-transform: rotate(360deg);}   }
+            @-moz-keyframes rotate { from {-moz-transform: rotate(0deg);} to {-moz-transform: rotate(360deg);}   }
+            @keyframes rotate { from {transform: rotate(0deg);} to {transform: rotate(360deg);}   }
+            .spinning {height: 100px; width: 100px; margin: 100px auto; border: 2px solid rgba(250, 0, 0, 0.75); border-right: 0; border-bottom: 0; border-radius: 100px; transition: all 0.5s ease-in; -webkit-transition: all 0.5s ease-in; -moz-transition: all 0.5s ease-in; animation: spinner 1.5s infinite linear; -webkit-animation: spinner 1.5s infinite linear; -moz-animation: spinner 1.5s infinite linear; -o-animation: spinner 1.5s infinite linear;}
+        </style>
+
+    </head>
+
+    <body ng-app="loadingSpinnerApp" ng-controller="MainCtrl">
+
+        <!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!--[if lt IE 9]>
+            <script src="bower_components/es5-shim/es5-shim.js"></script>
+            <script src="bower_components/json3/lib/json3.min.js"></script>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div ng-controller="ContainerCtrl">
+            <div ng-if="loading">
+                <div class="spinning"></div>
+            </div>
+        </div>
+
+        <script src="bower_components/angular/angular.js"></script>
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/container.js"></script>
+        <!-- endbuild -->
+
+    </body>
+
+</html>
